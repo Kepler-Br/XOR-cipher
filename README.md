@@ -9,5 +9,5 @@ Simple XOR file encryption with ability of generating keys in base64 of nothing 
   **-o OUTPUT, --output OUTPUT** - Specify output file name.  
   **-d, --decrypt** - Decrypt file.  
 Example:  
-python3 main.py --key=key.txt --output=encrypted.txt --chunk-size=10 --bit-shift=10 ./target.txt  
-python3 main.py --key=key.txt --output=decrypted.txt --chunk-size=10 --bit-shift=-10 --decrypt ./encrypted.txt  
+`python3 main.py --key=key.txt --output=encrypted.txt --chunk-size=10 --bit-shift=10 ./target.txt`  
+`python3 main.py --key=key.txt --output=decrypted.txt --chunk-size=10 --bit-shift=-10 --decrypt ./encrypted.txt`  
