@@ -1,6 +1,6 @@
 # XOR-cipher
 
-Simple XOR file encryption with ability of generating keys in base64 of nothing provided and bit shift.
+Simple XOR file encryption with ability of generating keys in base64 if nothing provided and bit shift.
 
   **-h, --help** - show help message  
   **-k KEY, --key KEY** - Specify key value file in base64. If none automatically generated will be used and saved in key.txt.  
