@@ -1,13 +1,20 @@
 # XOR-cipher
 
-Simple XOR file encryption with ability of generating keys in base64 and bit shift.
+Simple XOR file encryption script.
 
-  **-h, --help** - show help message  
-  **-k KEY, --key KEY** - Specify key value file in base64. If none automatically generated will be used and saved in key.txt.  
-  **-b BIT_SHIFT, --bit-shift BIT_SHIFT** - Specify bit shift. Positive numbers means right shift, negative - left shift. Default: 0  
-  **-c CHUNK_SIZE, --chunk-size CHUNK_SIZE** - Specify chunk size of file to encrypt in bytes. Default: 1  
-  **-o OUTPUT, --output OUTPUT** - Specify output file name.  
-  **-d, --decrypt** - Decrypt file.  
+| Short key     | Long key      | Description                                                                                  | Type          | Required      |
+| ------------- | ------------- | -------------                                                                                | ------------- | ------------- |
+| -h            | --help        | Show help                                                                                    | Flag          | No            |
+| -k            | --key         | Specify a binary key file. If --base64 specified, key will be interpreted as base64 encoded. | String        | Yes           |
+| -b            | --base64      | Interpret --key file as base64 encoded key.                                                  | Flag          | No            |
+| -s            | --stream_key  | Should you to stream a key. In case if you're using key that is larger than RAM.             | Flag          | No            |
+| -i            | --input       | File to encrypt. If not specified, stdin used instead.                                       | String        | No            |
+| -o            | --output      | Specify output file name. If not specified, stdout used instead.                             | String        | No            |
+
 Example:  
-`python3 main.py --key=key.txt --output=encrypted.txt --chunk-size=10 --bit-shift=10 ./target.txt`  
-`python3 main.py --key=key.txt --output=decrypted.txt --chunk-size=10 --bit-shift=-10 --decrypt ./encrypted.txt`  
+```shell
+python3 xorcipher.py --key=xorcipher.py --input=README.md --output=README-crypted.md
+```  
+```shell
+cat README.md | python3 xorcipher.py --key=xorcipher.py > README-crypted.md
+```  
